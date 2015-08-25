@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="minilog" location="0,0" size="0,0">
+    <action name="index" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="index.jsp" />
+      </result>
+    </action>
+    <action name="default" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="default.jsp" />
+      </result>
+    </action>
+    <action name="publish" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="default.jsp" />
+      </result>
+    </action>
+    <action name="star" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="star.jsp" />
+      </result>
+    </action>
+    <action name="forward" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="success.jsp" />
+      </result>
+    </action>
+    <action name="collect" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="success.jsp" />
+      </result>
+    </action>
+    <action name="user" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="user.jsp" />
+      </result>
+      <result name="login">
+        <resourceEdge source="login" routing="0" target="default.html" />
+      </result>
+    </action>
+    <action name="minilog" location="0,0" size="0,0">
+      <result name="input">
+        <resourceEdge source="input" routing="0" target="default.html" />
+      </result>
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="minilog.jsp" />
+      </result>
+    </action>
+    <action name="follow" location="0,0" size="0,0">
+      <result name="login">
+        <resourceEdge source="login" routing="0" target="index.html" />
+      </result>
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="success.jsp" />
+      </result>
+      <result name="fail">
+        <resourceEdge source="fail" routing="0" target="failure.jsp" />
+      </result>
+    </action>
+    <action name="mycomment" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="user_comment.jsp" />
+      </result>
+    </action>
+    <action name="mycollect" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="user_comment.jsp" />
+      </result>
+    </action>
+    <action name="letter" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="user_comment.jsp" />
+      </result>
+    </action>
+    <action name="atme" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="user_comment.jsp" />
+      </result>
+    </action>
+  </package>
+  <webResource name="index.jsp" path="/minilog/index.jsp" location="0,0" size="0,0" />
+  <webResource name="index.html" path="/minilog/index.html" location="0,0" size="0,0" />
+  <webResource name="default.jsp" path="/minilog/default.jsp" location="0,0" size="0,0" />
+  <webResource name="home.html" path="/minilog/home.html" location="0,0" size="0,0" />
+  <webResource name="square.jsp" path="/minilog/square.jsp" location="0,0" size="0,0" />
+  <webResource name="default.html" path="/minilog/default.html" location="0,0" size="0,0" />
+  <webResource name="success.jsp" path="/minilog/success.jsp" location="0,0" size="0,0" />
+  <webResource name="failure.jsp" path="/minilog/failure.jsp" location="0,0" size="0,0" />
+  <webResource name="star.jsp" path="/minilog/star.jsp" location="0,0" size="0,0" />
+  <webResource name="user.jsp" path="/minilog/user.jsp" location="0,0" size="0,0" />
+  <webResource name="index.html" path="index.html" location="0,0" size="0,0" />
+  <webResource name="minilog.jsp" path="/minilog/minilog.jsp" location="0,0" size="0,0" />
+  <webResource name="default.html" path="default.html" location="0,0" size="0,0" />
+  <webResource name="user_comment.jsp" path="/minilog/user_comment.jsp" location="0,0" size="0,0" />
+</Struts2Diagram>
+

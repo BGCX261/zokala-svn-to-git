@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class table="minilog_tip" name="com.neuallstar.minilog.entity.Tip">
+		<id name="tipId" type="integer" column="tipId" unsaved-value="0">
+			<generator class="identity" />
+		</id>
+		<property name="content" column="content" type="string"
+			length="255" not-null="true" />
+		<property name="link" column="link" type="string" length="255"
+			not-null="true" />
+		<property name="type" column="type" type="string" length="20"
+			not-null="true" />
+		<property name="read" column="isread" type="integer" length="1"></property>
+		<many-to-one name="from" column="fromer"></many-to-one>
+		<many-to-one name="to" column="toer"></many-to-one>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class table="common_brief" name="com.neuallstar.common.entity.Brief">
+		<id name="bid" type="integer" column="bid" unsaved-value="0">
+			<generator class="identity" />
+		</id>
+		<property name="content" column="content" type="text" not-null="true" />
+		<property name="ext" column="ext" type="string" length="255"></property>
+		<property name="link" column="link" type="string" length="255" not-null="true"></property>
+		<property name="title" column="title" type="string" length="60" not-null="true"></property>
+		<property name="type" column="type" type="string" length="20" not-null="true"></property>
+	</class>
+</hibernate-mapping>

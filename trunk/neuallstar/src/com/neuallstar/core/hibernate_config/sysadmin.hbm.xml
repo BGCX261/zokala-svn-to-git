@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class table="core_sysadmin" name="com.neuallstar.core.entity.SysAdmin">
+			<id name="user" type="integer" column="user">
+			<generator class="foreign">
+			<param name="property">user</param>
+			</generator>
+		</id>
+		<property name="password" column="password" type="string" length="20"
+			not-null="true" />
+	</class>
+</hibernate-mapping>

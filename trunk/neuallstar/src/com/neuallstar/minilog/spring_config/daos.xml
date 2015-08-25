@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd">
+	<bean id="minilog_commentDao" class="com.neuallstar.minilog.dao.impl.CommentDaoImpl">
+		<property name="sessionFactory" ref="mySessionFactory" />
+	</bean>
+	<bean id="minilog_letterDao" class="com.neuallstar.minilog.dao.impl.LetterDaoImpl">
+		<property name="sessionFactory" ref="mySessionFactory" />
+	</bean>
+	<bean id="minilog_minilogDao" class="com.neuallstar.minilog.dao.impl.MinilogDaoImpl">
+		<property name="sessionFactory" ref="mySessionFactory" />
+	</bean>
+	<bean id="minilog_relationshipDao" class="com.neuallstar.minilog.dao.impl.RelationshipDaoImpl">
+		<property name="sessionFactory" ref="mySessionFactory" />
+	</bean>
+	<bean id="minilog_minilogUserDao" class="com.neuallstar.minilog.dao.impl.MinilogUserDaoImpl">
+		<property name="sessionFactory" ref="mySessionFactory" />
+	</bean>
+	<bean id="minilog_tipDao" class="com.neuallstar.minilog.dao.impl.TipDaoImpl">
+		<property name="sessionFactory" ref="mySessionFactory" />
+	</bean>
+	<bean id="minilog_topicDao" class="com.neuallstar.minilog.dao.impl.TopicDaoImpl">
+		<property name="sessionFactory" ref="mySessionFactory" />
+	</bean>
+	<bean id="minilog_noticeDao" class="com.neuallstar.minilog.dao.impl.NoticeDaoImpl">
+		<property name="sessionFactory" ref="mySessionFactory" />
+	</bean>
+	<bean id="minilog_collectDao" class="com.neuallstar.minilog.dao.impl.CollectDaoImpl">
+		<property name="sessionFactory" ref="mySessionFactory" />
+	</bean>
+</beans>

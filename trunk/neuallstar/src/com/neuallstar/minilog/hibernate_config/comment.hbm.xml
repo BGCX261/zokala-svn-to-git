@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class table="minilog_comment" name="com.neuallstar.minilog.entity.Comment">
+		<id name="commentId" type="integer" column="commentId"
+			unsaved-value="0">
+			<generator class="identity" />
+		</id>
+		<property name="content" column="content" type="text"
+			not-null="true" />
+		<property name="time" type="timestamp" column="time"></property>
+		<many-to-one name="commented" column="commented" lazy="false"></many-to-one>
+		<many-to-one name="commenting" column="commenting" lazy="false" not-null="true"></many-to-one>
+		<many-to-one name="minilog" column="minilog"></many-to-one>
+	</class>
+</hibernate-mapping>

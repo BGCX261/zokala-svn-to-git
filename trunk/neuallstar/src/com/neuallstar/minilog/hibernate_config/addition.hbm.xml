@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class table="minilog_addition" name="com.neuallstar.minilog.entity.Addition">
+		<id name="addtionId" type="integer" column="" unsaved-value="0">
+			<generator class="identity" />
+		</id>
+		<property name="type" column="type" type="string" length="20"
+			not-null="true" />
+		<property name="content" column="content" type="string"></property>
+		<many-to-one name="minilog" column="minilog"></many-to-one>
+	</class>
+</hibernate-mapping>

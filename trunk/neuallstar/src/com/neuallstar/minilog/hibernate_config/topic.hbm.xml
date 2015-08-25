@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class table="minilog_topic" name="com.neuallstar.minilog.entity.Topic">
+		<id name="topicId" type="integer" column="topicId" unsaved-value="0">
+			<generator class="identity" />
+		</id>
+		<property name="content" column="content" unique="true" type="string" length="255"
+			not-null="true" />
+		<property name="time" type="timestamp" column="time"></property> 
+		 <property name="countMinilogs" column="countMinilogs" type="integer"></property>
+		 <many-to-one name="creator" column="creator"></many-to-one>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class table="minilog_minilog" name="com.neuallstar.minilog.entity.Minilog">
+		<id name="minilogId" type="integer" column="minilogId"
+			unsaved-value="0">
+			<generator class="identity" />
+		</id>
+		<property name="content" column="content" type="text"
+			not-null="true" />
+
+		<property name="time" type="timestamp" column="time" />
+		<many-to-one name="publisher" column="publisher" lazy="false"></many-to-one>
+		<many-to-one name="from" column="fromMinlog" lazy="false" not-null="false"></many-to-one>
+		<set name="comments" inverse="true">
+			<key column="minilog"></key>
+			<one-to-many class="com.neuallstar.minilog.entity.Comment" />
+		</set>
+		<set name="additions" inverse="true" fetch="join" cascade="save-update">
+			<key column="minilog"></key>
+			<one-to-many class="com.neuallstar.minilog.entity.Addition" />
+		</set>
+		<property name="forwards"
+			formula="(select count(*) from minilog_minilog f where f.fromMinlog=minilogId)"></property>
+		<property name="collects"
+			formula="(select count(*) from minilog_collect c where c.minilog=minilogId)"></property>
+		<property name="countComments"
+			formula="(select count(*) from minilog_comment c where c.minilog=minilogId)"></property>
+	</class>
+</hibernate-mapping>

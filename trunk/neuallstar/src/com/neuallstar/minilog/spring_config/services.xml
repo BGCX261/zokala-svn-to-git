@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd">
+	<bean id="minilog_minilogUserService" class="com.neuallstar.minilog.service.impl.MinilogUserServiceImpl">
+		<property name="minilogUserDao" ref="minilog_minilogUserDao" />
+	</bean>
+	<bean id="minilog_minilogService" class="com.neuallstar.minilog.service.impl.MinilogServiceImpl">
+		<property name="minilogDao" ref="minilog_minilogDao" />
+		<property name="minilogUserDao" ref="minilog_minilogUserDao"></property>
+		<property name="tipDao" ref="minilog_tipDao"></property>
+		<property name="topicDao" ref="minilog_topicDao"></property>
+	</bean>
+	<bean id="minilog_topicService" class="com.neuallstar.minilog.service.impl.TopicServiceImpl">
+		<property name="topicDao" ref="minilog_topicDao" /> 
+	</bean>
+	<bean id="minilog_tipService" class="com.neuallstar.minilog.service.impl.TipServiceImpl">
+		<property name="tipDao" ref="minilog_tipDao" /> 
+	</bean>
+	<bean id="minilog_noticeService" class="com.neuallstar.minilog.service.impl.NoticeServiceImpl">
+		<property name="noticeDao" ref="minilog_noticeDao" /> 
+	</bean>
+	<bean id="minilog_commentService" class="com.neuallstar.minilog.service.impl.CommentServiceImpl">
+		<property name="commentDao" ref="minilog_commentDao" /> 
+	</bean>
+		<bean id="minilog_relationshipService" class="com.neuallstar.minilog.service.impl.RelationshipServiceImpl">
+		<property name="relationshipDao" ref="minilog_relationshipDao" /> 
+	</bean>
+	<bean id="minilog_collectService" class="com.neuallstar.minilog.service.impl.CollectServiceImpl">
+		<property name="collectDao" ref="minilog_collectDao" /> 
+	</bean>
+</beans>

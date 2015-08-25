@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="core" extends="struts-default">
+		<action name="login" class="core_login">
+			<result name="success" type="redirect">/${next}</result>
+			<result name="login" type="redirect">/minilog/index.html</result>
+			<result name="input">/core/corelogin.jsp</result>
+		</action>
+		<action name="index" class="core_index">
+			<result name="success">/core/index.jsp</result> 
+		</action>
+		<action name="register" class="core_register">
+		<!--  <interceptor-ref name ="fileUpload" > 
+                <param name ="allowedTypes" > 
+                    image/bmp,image/png,image/gif,image/jpeg
+                </param > 
+            </interceptor-ref > 
+            <interceptor-ref name ="defaultStack" />    -->
+			<result name="success" type="redirect">/login.html</result>
+			<result name="input">/core/register.jsp</result>
+			<result name="login">/core/register.jsp</result>
+		</action>
+	</package>
+
+</struts>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class table="common_introduction" name="com.neuallstar.common.entity.Introduction">
+		<id name="introId" type="integer" column="introductionId"
+			unsaved-value="0">
+			<generator class="identity" />
+		</id>
+		<property name="content" column="content" type="text"
+			not-null="true" />
+
+		<property name="title" column="title" type="string" length="255"
+			not-null="true" />
+
+		<property name="time" column="time" type="timestamp"
+			not-null="true" />
+
+		<property name="rank" column="rank" type="integer" />
+	</class>
+</hibernate-mapping>

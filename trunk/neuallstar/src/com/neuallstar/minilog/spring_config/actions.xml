@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd">
+	<bean id="minilog_index" class="com.neuallstar.minilog.action.IndexAction">
+		<property name="minilogUserService" ref="minilog_minilogUserService"></property>
+	</bean>
+	<bean id="minilog_home" class="com.neuallstar.minilog.action.HomeAction">
+		<property name="minilogUserService" ref="minilog_minilogUserService"></property>
+		<property name="minilogService" ref="minilog_minilogService" />
+		<property name="topicService" ref="minilog_topicService" />
+		<property name="tipService" ref="minilog_tipService"></property>
+	</bean>
+	<bean id="minilog_default" class="com.neuallstar.minilog.action.DefaultAction">
+		<property name="minilogService" ref="minilog_minilogService"></property>
+		<property name="minilogUserService" ref="minilog_minilogUserService"></property>
+		<property name="noticeService" ref="minilog_noticeService"></property>
+		<property name="topicService" ref="minilog_topicService"></property>
+	</bean>
+	<bean id="minilog_publish" class="com.neuallstar.minilog.action.PublishAction">
+		<property name="minilogService" ref="minilog_minilogService"></property>
+	</bean>
+	<bean id="minilog_follow" class="com.neuallstar.minilog.action.FollowAction">
+		<property name="relationshipService" ref="minilog_relationshipService"></property>
+	</bean>
+	<bean id="minilog_forward" class="com.neuallstar.minilog.action.ForwardAction">
+		<property name="commentService" ref="minilog_commentService"></property>
+		<property name="minilogService" ref="minilog_minilogService"></property>
+	</bean>
+	<bean id="minilog_popular" class="com.neuallstar.minilog.action.PopularAction">
+		<property name="minilogUserService" ref="minilog_minilogUserService"></property>
+		<property name="minilogService" ref="minilog_minilogService"></property>
+		<property name="topicService" ref="minilog_topicService"></property>
+	</bean>
+	<bean id="minilog_collect" class="com.neuallstar.minilog.action.CollectAction">
+		<property name="collectService" ref="minilog_collectService"></property>
+	</bean>
+	<bean id="minilog_user" class="com.neuallstar.minilog.action.UserAction">
+		<property name="minilogService" ref="minilog_minilogService"></property>
+		<property name="relationshipService" ref="minilog_relationshipService"></property>
+		<property name="topicService" ref="minilog_topicService"></property>
+		<property name="userService" ref="minilog_minilogUserService"></property>
+	</bean>
+	<bean id="minilog_minilog" class="com.neuallstar.minilog.action.MinilogAction">
+		<property name="commentService" ref="minilog_commentService"></property>
+		<property name="minilogService" ref="minilog_minilogService"></property>
+	</bean>
+	<bean id="minilog_loginInterceptor" class="com.neuallstar.minilog.action.LoginInterceptor">
+		<property name="minilogUserService" ref="minilog_minilogUserService"></property>
+		<property name="userService" ref="core_userService"></property>
+	</bean><!-- 
+	<bean id="minilog_atme" class="com.neuallstar.minilog.action.AtMeAction">
+		<property name="minilogService" class="minilog_minilogService"></property>
+	</bean>
+	<bean id="minilog_userComment" class="com.neuallstar.minilog.action.UserCommentAction">
+		<property name=""></property>
+	</bean>
+	<bean id="minilog_userCollectt" class="com.neuallstar.minilog.action.UserCollectAction">
+		<property name="collectService" ref="minilog_collectService"></property>
+	</bean>
+	<bean id="myletter" class="com.neuallstar.minilog.action.UserLetterAction">
+	</bean> -->
+</beans>

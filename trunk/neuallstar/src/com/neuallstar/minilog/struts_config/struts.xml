@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="minilog" extends="struts-default" namespace="/minilog">
+		<interceptors>
+			<interceptor name="loginInterceptor" class="minilog_loginInterceptor"></interceptor>
+			<interceptor-stack name="minilogInteceptor">
+				<interceptor-ref name="loginInterceptor"></interceptor-ref>
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="defaultStack"></default-interceptor-ref>
+		<global-results>
+			<result name="login" type="redirect">/minilog/default.html</result>
+		</global-results>
+
+		<action name="index" class="minilog_home">
+			<interceptor-ref name="loginInterceptor"></interceptor-ref>
+			<result name="success">/minilog/index.jsp</result>
+		</action>
+		<action name="default" class="minilog_default">
+			<result name="success">/minilog/default.jsp</result>
+		</action>
+		<action name="publish" class="minilog_publish">
+			<result name="success">/minilog/default.jsp</result>
+		</action>
+		<action name="star" class="minilog_popular">
+			<result name="success">/minilog/star.jsp</result>
+		</action>
+		<action name="forward" class="minilog_forward">
+			<result name="success">/minilog/success.jsp</result>
+		</action>
+		<action name="collect" class="minilog_collect">
+			<result name="success">/minilog/success.jsp</result>
+		</action>
+		<action name="user" class="minilog_user">
+			<result name="success">/minilog/user.jsp</result>
+			<result name="login" type="redirect">/minilog/default.html</result>
+		</action>
+		<action name="minilog" class="minilog_minilog">
+			<result name="input" type="redirect">default.html</result>
+			<result name="success">/minilog/minilog.jsp</result>
+		</action>
+		<action name="follow" class="minilog_follow">
+			<result name="login" type="redirect">/minilog/index.html</result>
+			<result name="success">/minilog/success.jsp</result>
+			<result name="fail">/minilog/failure.jsp</result>
+		</action><!-- 
+		<action name="mycomment" class="minilog_userComment">
+			<interceptor-ref name="loginInterceptor"></interceptor-ref>
+			<result name="success">/minilog/user_comment.jsp</result>
+		</action>
+			<action name="mycollect" class="minilog_userCollectt">
+			<interceptor-ref name="loginInterceptor"></interceptor-ref>
+			<result name="success">/minilog/user_comment.jsp</result>
+		</action>
+			<action name="letter" class="minilog_userLetter">
+			<interceptor-ref name="loginInterceptor"></interceptor-ref>
+			<result name="success">/minilog/user_comment.jsp</result>
+		</action>
+			<action name="atme" class="minilog_atme">
+			<interceptor-ref name="loginInterceptor"></interceptor-ref>
+			<result name="success">/minilog/user_comment.jsp</result>
+		</action> -->
+		<!--
+			<action name="*"> <result name="success"
+			type="redirect">/minilog/index.html</result> </action>
+		-->
+	</package>
+
+</struts>

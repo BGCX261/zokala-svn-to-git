@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class table="minilog_user" name="com.neuallstar.minilog.entity.MinilogUser">
+		<id name="muid" type="integer" column="muid">
+			<generator class="foreign">
+				<param name="property">user</param>
+			</generator>
+		</id>
+		<property name="collectSize" column="collectSize" type="integer" />
+		<property name="commentSize" column="commentSize" type="integer" />
+		<property name="followedSize" column="followedSize" type="integer" />
+		<property name="letterSize" column="letterSize" type="integer" />
+		<property name="minilogSize" column="minilogSize" type="integer" />
+		<property name="recomendUserSize" column="recomendUserSize"
+			type="integer" />
+		<property name="commentExpandSize" column="commentExpandSize"
+			type="integer" />
+		<property name="topicSize" column="topicSize" type="integer" />
+		<property name="nickname" column="nickname" type="string"
+			length="14" />
+		<property name="template" column="template" type="string"
+			length="9" />
+		<property name="introduction" column="introduction" type="string"
+			length="255" />
+		<property name="background" column="background" type="string"
+			length="60" />
+		<property name="avatar" column="avatar" type="string" length="60" />
+		<property name="time" column="time" type="timestamp" />
+		<property name="followeds"
+			formula="(select count(*) from minilog_relationship r where r.following=muid)"></property>
+		<property name="followings"
+			formula="(select count(*) from minilog_relationship r where r.followed=muid)"></property>
+		<property name="minilogs"
+			formula="(select count(*) from minilog_minilog m where m.publisher=muid)"></property>
+		<property name="ats" formula="(select count(*) from minilog_tip t where t.fromer=muid and t.type='@')"></property>
+		<property name="collects" formula="(select count(*) from minilog_collect c where c.user=muid)"></property>
+		<property name="comments" formula="(select count(*) from minilog_comment c where c.commenting=muid)"></property>
+		<property name="topics" formula="(select count(*) from minilog_topic t where t.creator=muid)"></property>
+		<property name="forwards" formula="(select count(m.fromMinlog) from minilog_minilog m where m.publisher=muid)"></property>
+		<one-to-one name="user" class="com.neuallstar.core.entity.User"></one-to-one>
+	</class>
+</hibernate-mapping>

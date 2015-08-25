@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class table="core_user" name="com.neuallstar.core.entity.User">
+		<!-- 登录信息 -->
+		<id name="id" type="integer" column="uid" unsaved-value="0">
+			<generator class="identity" />
+		</id>
+		<property name="username" column="username" type="string"
+			length="20" not-null="true" />
+		<property name="password" column="password" type="string"
+			length="20" not-null="true" />
+		<!-- 基本信息 -->
+		<property name="gender" column="gender" type="string" />
+		<property name="nickname" column="nickname" type="string"
+			length="20" />
+		<property name="hometown" column="hometowmn" type="string"
+			length="40" />
+		<property name="birthday" column="birthday" type="date"
+			length="12" />
+		<property name="avatar" column="avatar" type="string" length="255" />
+		<!-- 学校信息  -->
+		<property name="school" column="school" length="20" type="string" />
+		<property name="college" column="college" length="20" type="string" />
+		<property name="major" column="major" length="20" type="string" />
+		<property name="studentId" column="studentId" type="integer" />
+		<!-- 工作信息 -->
+		<property name="industry" column="industry" length="20" type="string" />
+		<property name="company" column="company" length="20" type="string" />
+		<property name="position" column="position" length="20" type="string" />
+		<property name="district" column="district" length="20" type="string" />
+		<property name="location" column="location" length="60" type="string" />
+		<property name="zip" column="zip" length="10" type="string" />
+		<!-- 通信信息 -->
+		<property name="email" column="email" type="string" length="40" />
+		<property name="msn" column="msn" type="string" length="40" />
+		<property name="qq" column="qq" type="string" length="20" />
+		<property name="phone" column="phone" type="string" length="14" />
+
+	</class>
+</hibernate-mapping>

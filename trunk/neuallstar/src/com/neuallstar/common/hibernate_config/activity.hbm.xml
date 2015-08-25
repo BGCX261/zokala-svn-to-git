@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class table="common_activity" name="com.neuallstar.common.entity.Acivity">
+		<id name="aid" type="integer" column="aid" unsaved-value="0">
+			<generator class="identity" />
+		</id>
+		<property name="actor" column="actor" type="string" length="60" />
+		<property name="address" column="address" type="string" length="255" />
+		<property name="content" column="content" type="text" />
+		<property name="end" column="end" type="date" />
+		<property name="start" column="start" type="date" />
+		<property name="time" column="time" type="timestamp" />
+		<property name="title" column="title" type="string" length="40" />
+	</class>
+</hibernate-mapping>
